@@ -13,7 +13,9 @@
     <div class="total__sum">
       <span class="total__key-sum">Стоимость товаров</span>
       <span class="total__value-sum">{{ getTotalSum }} ₽</span>
-      <button class="total__button total__button_create">Оформить заказ</button>
+      <button @click="sendDataCard" class="total__button total__button_create">
+        Оформить заказ
+      </button>
       <button class="total__button total__button_buy">Купить в 1 клик</button>
     </div>
   </div>
@@ -24,7 +26,30 @@ import { mapGetters } from "vuex";
 export default {
   name: "TotalCheckout",
   computed: {
-    ...mapGetters(["getTotalSum", "getTotalQuantity", "getIsInstallation"]),
+    ...mapGetters([
+      "getGoodsInCard",
+      "getTotalSum",
+      "getTotalQuantity",
+      "getIsInstallation",
+    ]),
+  },
+  methods: {
+    async sendDataCard() {
+      if (this.getGoodsInCard.length === 0) return;
+      //в демонстрационных целях отправка корзины и наличия установки на сервер.
+      let response = await fetch("http://www.exaple.com/api/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify({
+          card: this.getGoodsInCard,
+          isInstallation: this.getIsInstallation,
+        }),
+      });
+      let result = await response.json();
+      console.log(result);
+    },
   },
 };
 </script>
