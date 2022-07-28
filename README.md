@@ -1,5 +1,12 @@
 # test-shopping-cart-vue
 
+Реализованы 2 vuex хранилища:
+1) Товары, находящиеся в корзине 
+2) Недавно просмотренные товары.
+
+Слайдер реализован с помощью библиотеки vue-agile.
+
+
 ## Project setup
 ```
 npm install
@@ -14,11 +21,3 @@ npm run serve
 ```
 npm run build
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
