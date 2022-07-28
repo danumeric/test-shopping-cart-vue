@@ -37,7 +37,7 @@ export default {
     async sendDataCard() {
       if (this.getGoodsInCard.length === 0) return;
       //в демонстрационных целях отправка корзины и наличия установки на сервер.
-      let response = await fetch("http://www.exaple.com/api/", {
+      let response = await fetch("https://www.exaple.com/api/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=utf-8",
