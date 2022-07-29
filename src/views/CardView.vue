@@ -3,7 +3,7 @@
     <nav class="navigation"></nav>
     <div class="home">
       <HeaderCard />
-      <RouteWay class="route-way" />
+      <RouteWay class="home__route" />
       <div class="home__card-frame">
         <div class="home__card-list">
           <CardList />
@@ -59,8 +59,8 @@ export default {
   &__total {
     margin: 70px 0px 0px 0px;
   }
-}
-.route-way {
-  margin: 31px 0px 0px 0px;
+  &__route {
+    margin: 31px 0px 0px 0px;
+  }
 }
 </style>
